@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url(styles/cards/cards_style.css);
+@font-face {
+  font-family: SquareCaps;
+  src: url(fonts/SquareCaps.ttf);
+}
+@font-face {
+  font-family: Barbarian;
+  src: url(fonts/Barbarian.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-image: url(images/Cartoon_Forest_BG_01.png);
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation-name: bg_animation;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  transition: all 60s;
+}
+
+h1 {
+  font-family: "SquareCaps", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.animation {
+  height: 192px;
+  width: 192px;
+  background: url(images/warrior_idle.png);
+  animation-name: sprite;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(6);
+  animation-iteration-count: infinite;
+}
+
+.wizard {
+  height: 192px;
+  width: 192px;
+  background: url(images/wizard.png);
+  animation-name: wizard_animation;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+}
+
+.technologies p {
+  font-family: "MedievalSharp", cursive;
+}
+
+#effect {
+  height: 92px;
+  width: 92px;
+  transform: translate(-50%, -50%);
+  background: url(images/effect.png);
+  animation-name: effect_animation;
+  animation-duration: 1.5s;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+}
+
+p {
+  font-family: "MedievalSharp", cursive;
+}
+
+.clouds {
+  height: 3.7rem;
+  width: 17rem;
+  background: url(images/clouds.png);
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: clouds 5s infinite;
+  transition: all 5s;
+  position: absolute;
+  top: 7rem;
+  left: 7rem;
+}
+
+.clouds-2 {
+  height: 3.7rem;
+  width: 17rem;
+  background: url(images/clouds.png);
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: clouds 5s infinite;
+  transition: all 5s;
+  position: absolute;
+  top: 35rem;
+  right: 7rem;
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+}
+@keyframes sprite {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1152px;
+  }
+}
+@keyframes effect_animation {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -920px;
+  }
+}
+@keyframes bg_animation {
+  0% {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1920px;
+  }
+}
+@keyframes wizard_animation {
+  0% {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1536px;
+  }
+}/*# sourceMappingURL=style.css.map */

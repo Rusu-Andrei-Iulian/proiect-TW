@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.scss">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class=" h-screen flex flex-col gap-[5rem] lg:flex-row justify-center lg:justify-around items-center hero">
+        <h1
+            class="inline-block text-center text-4xl  text-white sm:text-6xl  lg:text-[4rem] xl:text-[6rem] 2xl:text-[10rem]">
+            Rusu Andrei <br>
+            <span class="font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem] "> Frontend</span>
+            <span class="whitespace-nowrap font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem]">
+                Developer</span>
+        </h1>
+    </div>
+
+    <main class="flex flex-col p-10 mt-[5rem] items-center">
+
+        <section class="aboutMe text-center flex flex-col gap-6 max-w-[1360px] ">
+            <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
+                About Me</h1>
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">Hark, fair lords and ladies! I am but a humble squire, born of
+                humble beginnings but forged in
+                the fires
+                of battle and schooled in the ways of war.</p>
+
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">Through tireless study and countless campaigns, I have become a
+                skilled warrior of the digital realm, my
+                weapons of choice being the languages of code and the tools of technology. I have served in the courts
+                of kings and the councils of merchants, my counsel sought by those who seek to conquer the digital
+                frontier and establish dominion over the realms of commerce and industry.</p>
+
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">So come, good sirs and ladies, and learn of my deeds and
+                accomplishments, that you may see the worth and
+                value that I bring to any endeavor or enterprise. For I am a knight of the digital realm, sworn to
+                defend and serve with honor and valor, until the end of my days.</p>
+        </section>
+
+        <section class="experience text-center flex flex-col gap-6 max-w-[1360px] mt-[7rem]">
+            <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
+                Experience</h1>
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">Verily, I have been a humble squire in the field of
+                programming for nigh on a year, serving as a skilled artisan of the digital realm.</p>
+
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">Through countless hours of study and practice, I have become a
+                skilled journeyman of the frontend arts, honing my skills with each stroke of the keyboard and each
+                click of the mouse. With my knowledge of HTML, CSS, and JavaScript, I have crafted masterpieces of
+                digital design, each one a testament to my skill and dedication to my craft.</p>
+
+            <p class="md:text-[1.2rem] lg:text-[1.5rem]">And so I stand ready, to
+                serve as a defender of the digital realm, to protect and defend the noble houses of commerce and
+                industry from the threats that seek to bring them low. For I am a humble squire, but one whose skills
+                and dedication are unmatched, and whose valor and courage will not falter in the face of adversity.</p>
+        </section>
+
+
+        <section class="text-center flex flex-col gap-6 mt-[7rem]">
+            <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
+                Skills</h1>
+            <div class="flex justify-around items-center flex-wrap technologies gap-10 [&>*]:self-stretch">
+
+                <div class="flex flex-col gap-5  items-center md:w-[15rem]">
+                    <div class="wizard"></div>
+                    <img src="./images/ang-logo.png" alt="c#-logo" class="w-1/3">
+                    <p>Behold, Angular the mage, master of web development enchantment, conjures digital creations of
+                        beauty and function. Enter his realm and be enchanted by his spells of wonder and delight, where
+                        the magic of the digital realm awaits.</p>
+                </div>
+
+                <div class="flex flex-col gap-5   items-center md:w-[15rem]">
+                    <div class="animation"></div>
+                    <img src="./images/logo.png" alt="c#-logo" class="w-1/3">
+                    <p>The C# backend is a hidden digital warrior, defending the kingdom's data with steely resolve and
+                        unfailing skill. His code is an impenetrable fortress wall that keeps the kingdom's secrets safe
+                        from
+                        harm.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <div class="absolute" id="effect">
+
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
