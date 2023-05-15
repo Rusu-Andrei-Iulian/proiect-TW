@@ -78,40 +78,6 @@ p {
   font-family: "MedievalSharp", cursive;
 }
 
-.clouds {
-  height: 3.7rem;
-  width: 17rem;
-  background: url(images/clouds.png);
-  -o-object-fit: cover;
-     object-fit: cover;
-  animation: clouds 5s infinite;
-  transition: all 5s;
-  position: absolute;
-  top: 7rem;
-  left: 7rem;
-}
-
-.clouds-2 {
-  height: 3.7rem;
-  width: 17rem;
-  background: url(images/clouds.png);
-  -o-object-fit: cover;
-     object-fit: cover;
-  animation: clouds 5s infinite;
-  transition: all 5s;
-  position: absolute;
-  top: 35rem;
-  right: 7rem;
-}
-
-@keyframes clouds {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-40px);
-  }
-}
 @keyframes sprite {
   from {
     background-position: 0px;
@@ -142,5 +108,67 @@ p {
   }
   to {
     background-position: -1536px;
+  }
+}
+.container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  background-color: #a5e0fe;
+}
+
+.aboutMe {
+  height: 48.2rem;
+  background: url(images/clouds1000.png);
+  background: url(images/clouds1000.png) 0 100px, url(images/clouds1200_1.png) 0 200px, url(images/clouds1200_1.png) 100px 150px;
+  animation: wind 20s linear infinite;
+}
+
+@keyframes wind {
+  0% {
+    background-position: 0 100px, 0 200px, 100px 150px;
+  }
+  100% {
+    background-position: 1000px 100px, 1200px 200px, 1100px 150px;
+  }
+}
+.experience {
+  position: relative;
+  z-index: 0;
+}
+
+.bird-1 {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  z-index: -1;
+  animation: bird-1 20s linear infinite;
+}
+
+.bird-2 {
+  position: absolute;
+  bottom: 3rem;
+  left: 30rem;
+  z-index: -1;
+  animation: bird-2 35s linear infinite;
+}
+
+@keyframes bird-1 {
+  0% {
+    transform: translate(1800px);
+  }
+  100% {
+    transform: translate(-1000px);
+  }
+}
+@keyframes bird-2 {
+  0% {
+    transform: translate(-1800px) scaleX(-1);
+  }
+  100% {
+    transform: translate(1800px) scaleX(-1);
   }
 }/*# sourceMappingURL=style.css.map */
