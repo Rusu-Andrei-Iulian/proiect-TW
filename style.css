@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 @import url(styles/cards/cards_style.css);
-
 @font-face {
   font-family: SquareCaps;
   src: url(fonts/SquareCaps.ttf);
 }
-
 @font-face {
   font-family: Barbarian;
   src: url(fonts/Barbarian.ttf);
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +21,7 @@ body {
 .hero {
   background-image: url(images/Cartoon_Forest_BG_01.png);
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   animation-name: bg_animation;
   animation-duration: 60s;
   animation-iteration-count: infinite;
@@ -62,6 +59,21 @@ h1 {
   animation-iteration-count: infinite;
 }
 
+.wizard:hover {
+  height: 192px;
+  width: 192px;
+  background: url(images/Hurt.png);
+  animation: wizard_hurt 1.5s steps(4) infinite;
+}
+
+@keyframes wizard_hurt {
+  0% {
+    background-position: 0px;
+  }
+  to {
+    background-position: -768px;
+  }
+}
 .technologies p {
   font-family: "MedievalSharp", cursive;
 }
@@ -85,42 +97,34 @@ p {
   from {
     background-position: 0px;
   }
-
   to {
     background-position: -1152px;
   }
 }
-
 @keyframes effect_animation {
   from {
     background-position: 0px;
   }
-
   to {
     background-position: -920px;
   }
 }
-
 @keyframes bg_animation {
   0% {
     background-position: 0px;
   }
-
   to {
     background-position: -1920px;
   }
 }
-
 @keyframes wizard_animation {
   0% {
     background-position: 0px;
   }
-
   to {
     background-position: -1536px;
   }
 }
-
 .container {
   margin: 0;
   padding: 0;
@@ -142,12 +146,10 @@ p {
   0% {
     background-position: 0 100px, 0 200px, 100px 150px;
   }
-
   100% {
     background-position: 1000px 100px, 1200px 200px, 1100px 150px;
   }
 }
-
 .experience {
   position: relative;
   z-index: 0;
@@ -173,23 +175,19 @@ p {
   0% {
     transform: translate(1800px);
   }
-
   100% {
     transform: translate(-1000px);
   }
 }
-
 @keyframes bird-2 {
   0% {
     transform: translate(-1800px) scaleX(-1);
   }
-
   100% {
     transform: translate(1800px) scaleX(-1);
   }
 }
-
 .test {
-  background: rgb(76, 140, 101);
-  background: linear-gradient(180deg, rgba(50,34,24,1) 20%, rgba(0, 0, 0, 1) 68%);
-}
+  background: rgb(50, 34, 24);
+  background: linear-gradient(180deg, rgb(50, 34, 24) 44%, rgb(0, 0, 0) 100%);
+}/*# sourceMappingURL=style.css.map */
