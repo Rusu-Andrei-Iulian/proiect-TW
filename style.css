@@ -191,5 +191,5 @@ p {
 
 .test {
   background: rgb(76, 140, 101);
-  background: linear-gradient(180deg, rgba(155, 118, 83, 1) 0%, rgba(0, 0, 0, 1) 48%);
+  background: linear-gradient(180deg, rgba(50,34,24,1) 20%, rgba(0, 0, 0, 1) 68%);
 }
