@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-@import url(styles/cards/cards_style.css);
-
 @font-face {
     font-family: SquareCaps;
     src: url(fonts/SquareCaps.ttf);
@@ -9,6 +6,11 @@
 @font-face {
     font-family: Barbarian;
     src: url(fonts/Barbarian.ttf);
+}
+
+@font-face {
+    font-family: MedievalSharp;
+    src: url(fonts/MedievalSharp-Regular.ttf);
 }
 
 * {
@@ -23,7 +25,6 @@ body {
 
 .hero {
     background-image: url(images/Cartoon_Forest_BG_01.png);
-    object-fit: contain;
     animation-name: bg_animation;
     animation-duration: 60s;
     animation-iteration-count: infinite;
@@ -82,31 +83,158 @@ h1 {
     }
 }
 
-
-
-
-.technologies p {
-    font-family: 'MedievalSharp', cursive;
-}
-
-#effect {
-    height: 92px;
-    width: 92px;
-    transform: translate(-50%, -50%);
-    background: url(images/effect.png);
-    animation-name: effect_animation;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(10);
-    animation-iteration-count: infinite;
-}
-
 p {
     font-family: 'MedievalSharp', cursive;
 }
 
+.container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
+.container {
+    background-color: #a5e0fe;
+}
 
+.aboutMe {
+    height: 48.2rem;
+    background: url(images/clouds1000.png);
+    background: url(images/clouds1000.png) 0 100px,
+        url(images/clouds1200_1.png) 0 200px,
+        url(images/clouds1200_1.png) 100px 150px;
+    animation: wind 20s linear infinite;
+}
 
+.experience {
+    position: relative;
+    z-index: 0;
+}
+
+.bird-1 {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    z-index: -1;
+    animation: bird-1 20s linear infinite;
+}
+
+.bird-2 {
+    position: absolute;
+    bottom: 3rem;
+    left: 30rem;
+    z-index: -1;
+    animation: bird-2 35s linear infinite;
+}
+
+.transition {
+    background: rgb(50, 34, 24);
+    background: linear-gradient(180deg, rgba(50, 34, 24, 1) 44%, rgba(0, 0, 0, 1) 100%);
+}
+
+.village {
+    position: relative;
+}
+
+@mixin gif {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    z-index: 1;
+}
+
+.gif {
+    @include gif;
+    bottom: calc(100% - 84%);
+    left: calc(100% - 100%);
+}
+
+.gif2 {
+    @include gif;
+    bottom: calc(100% - 84%);
+    left: calc(100% - 70%);
+    transform: scaleX(-1);
+}
+
+.gif3 {
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% - 42%);
+    left: calc(100% - 87%);
+}
+
+.gif4 {
+    @include gif;
+    bottom: calc(100% - 84%);
+    left: calc(100% - 37%);
+    transform: scaleX(-1);
+}
+
+.cave {
+    position: relative;
+}
+
+.skeleton {
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% - 72%);
+    right: calc(100% - 47%);
+}
+
+.flying_monster {
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% - 72%);
+    right: calc(100% - 77%);
+}
+
+.logo {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(96deg) brightness(103%) contrast(101%);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+@keyframes wind {
+    0% {
+        background-position: 0 100px, 0 200px, 100px 150px;
+    }
+
+    100% {
+        background-position: 1000px 100px, 1200px 200px, 1100px 150px;
+    }
+
+}
+
+@keyframes bird-1 {
+    0% {
+        transform: translate(1800px)
+    }
+
+    100% {
+        transform: translate(-1000px)
+    }
+}
+
+@keyframes bird-2 {
+    0% {
+        transform: translate(-1800px) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(1800px) scaleX(-1);
+    }
+}
 
 @keyframes sprite {
     from {
@@ -148,78 +276,32 @@ p {
     }
 }
 
-.container {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.container {
-    background-color: #a5e0fe;
-}
-
-.aboutMe {
-    height: 48.2rem;
-    background: url(images/clouds1000.png);
-    background: url(images/clouds1000.png) 0 100px,
-        url(images/clouds1200_1.png) 0 200px,
-        url(images/clouds1200_1.png) 100px 150px;
-    animation: wind 20s linear infinite;
-}
-
-@keyframes wind {
-    0% {
-        background-position: 0 100px, 0 200px, 100px 150px;
+@media screen and (min-width: 640px) {
+    .title {
+        font-size: 3.75rem;
+        line-height: 1;
     }
 
-    100% {
-        background-position: 1000px 100px, 1200px 200px, 1100px 150px;
-    }
-
-}
-
-.experience {
-    position: relative;
-    z-index: 0;
-}
-
-.bird-1 {
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    z-index: -1;
-    animation: bird-1 20s linear infinite;
-}
-
-.bird-2 {
-    position: absolute;
-    bottom: 3rem;
-    left: 30rem;
-    z-index: -1;
-    animation: bird-2 35s linear infinite;
-}
-
-@keyframes bird-1 {
-    0% {
-        transform: translate(1800px)
-    }
-
-    100% {
-        transform: translate(-1000px)
+    .logo {
+        width: 3rem;
+        height: 3rem;
     }
 }
 
-@keyframes bird-2 {
-    0% {
-        transform: translate(-1800px) scaleX(-1);
-    }
-
-    100% {
-        transform: translate(1800px) scaleX(-1);
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 4rem;
     }
 }
 
-.test {
-    background: rgb(50, 34, 24);
-    background: linear-gradient(180deg, rgba(50, 34, 24, 1) 44%, rgba(0, 0, 0, 1) 100%);
+@media screen and (min-width: 1280px) {
+    .title {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .title {
+        font-size: 10rem;
+    }
 }

@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.scss">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <title>Portofolio</title>
 </head>
 
 <body>
 
-    <div class=" h-screen flex flex-col gap-[5rem] lg:flex-row justify-center lg:justify-around items-center hero">
-        <h1
-            class="inline-block text-center text-4xl  text-white sm:text-6xl  lg:text-[4rem] xl:text-[6rem] 2xl:text-[10rem]">
+    <div class=" h-screen flex flex-col justify-center items-center hero" id="hero">
+        <h1 class="inline-block text-center title  text-white">
             Rusu Andei <br>
             <span class="font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem] "> Frontend</span>
             <span class="whitespace-nowrap font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem]">
                 Developer</span>
         </h1>
+        <div class="flex gap-[5rem] ">
+            <a href="https://www.linkedin.com/in/andrei-iulian-rusu-b02496240/" target="_blank"><img
+                    src="images/linkedin_logo.svg" alt="" class="logo"></a>
+            <a href="https://github.com/Rusu-Andrei-Iulian" target="_blank"><img src="images/github-mark-white.svg"
+                    alt="" class="logo"></a>
+        </div>
     </div>
 
     <main class="flex flex-col items-center bg-[#a5e0fe]">
 
         <div class="aboutMe w-full flex justify-center py-[4rem] items-center">
-            <section class=" text-center flex flex-col gap-6 max-w-[1360px] mt-5">
+            <div class=" text-center flex flex-col gap-6 max-w-[1360px] mt-5 p-5">
                 <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
                     About Me</h1>
                 <p class="md:text-[1.2rem] lg:text-[1.5rem]">Hark, fair lords and ladies! I am but a humble squire, born
@@ -47,11 +53,11 @@
                     accomplishments, that you may see the worth and
                     value that I bring to any endeavor or enterprise. For I am a knight of the digital realm, sworn to
                     defend and serve with honor and valor, until the end of my days.</p>
-            </section>
+            </div>
         </div>
 
 
-        <section class="experience text-center flex flex-col gap-6 max-w-[1360px] mt-[7rem] relative">
+        <div class="experience text-center flex flex-col gap-6 max-w-[1360px] mt-[7rem] relative p-5">
             <img src="images/3ooRmV.gif" alt="" class="w-[4rem] h-[4rem] bird-1 hidden lg:block">
             <img src="images/3ooRmV.gif" alt="" class="w-[4rem] h-[4rem] bird-2 hidden lg:block">
             <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
@@ -68,42 +74,50 @@
                 serve as a defender of the digital realm, to protect and defend the noble houses of commerce and
                 industry from the threats that seek to bring them low. For I am a humble squire, but one whose skills
                 and dedication are unmatched, and whose valor and courage will not falter in the face of adversity.</p>
-        </section>
+        </div>
 
 
-        <section class="text-center flex flex-col gap-6 mt-[7rem]">
+        <div class="text-center flex flex-col gap-6 mt-[7rem]">
             <h1 class="text-4xl sm:text-6xl  lg:text-[4rem] 2xl:text-[5rem]">
                 Skills</h1>
             <div class="flex justify-around items-center flex-wrap technologies gap-10 [&>*]:self-stretch">
 
                 <div class="flex flex-col gap-5  items-center md:w-[15rem]">
                     <div class="wizard"></div>
-                    <img src="./images/ang-logo.png" alt="c#-logo" class="w-[25%] md:w-1/3">
+                    <img src="./images/ang-logo.png" alt="c#-logo" class="w-[4rem] md:w-1/3">
                 </div>
 
                 <div class="flex flex-col gap-5   items-center md:w-[15rem]">
                     <div class="animation"></div>
-                    <img src="./images/logo.png" alt="c#-logo" class="w-[25%] md:w-1/3">
+                    <img src="./images/logo.png" alt="c#-logo" class="w-[4rem] md:w-1/3">
                 </div>
             </div>
 
-        </section>
+        </div>
     </main>
 
 
-    <section class="w-full village">
+    <div class="w-full village overflow-hidden">
         <img src="images/village.png" alt="" class="w-full">
-        <div class="wrapper">
-            <div class="villager_man"></div>
+        <img src="images/fire_wizard.gif" alt="" class="gif object-contain">
+        <img src="images/kunoichi.gif" alt="" class="gif2 object-contain">
+        <img src="images/dog.gif" alt="" class="gif3 object-contain">
+        <img src="images/knight.gif" alt="" class="gif4 object-contain">
+    </div>
+
+    <div class="transition w-full h-[7rem] md:h-[40rem]">
+
+    </div>
+    <div class="w-full cave">
+        <img src="images/howxn0qns9861.webp" alt="" class="w-full object-cover">
+        <div class="skeleton">
+            <img src="images/skeleton.gif" alt="skeleton" class="w-full object-contain">
+        </div>
+        <div class="flying_monster flex flex-col">
+            <img src="images/flying_monster.gif" alt="flying monster" class="w-full object-contain">
         </div>
 
-    </section>
-    <section class="test w-full h-[10rem] md:h-[40rem]">
-
-    </section>
-    <section class="w-full">
-        <img src="images/howxn0qns9861.webp" alt="" class="w-full object-cover">
-    </section>
+    </div>
     <script src="index.js"></script>
 </body>
 
