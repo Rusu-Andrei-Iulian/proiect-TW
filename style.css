@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 @import url(styles/cards/cards_style.css);
+
 @font-face {
   font-family: SquareCaps;
   src: url(fonts/SquareCaps.ttf);
 }
+
 @font-face {
   font-family: Barbarian;
   src: url(fonts/Barbarian.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +24,7 @@ body {
 .hero {
   background-image: url(images/Cartoon_Forest_BG_01.png);
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   animation-name: bg_animation;
   animation-duration: 60s;
   animation-iteration-count: infinite;
@@ -70,23 +73,14 @@ h1 {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -768px;
   }
 }
+
 .technologies p {
   font-family: "MedievalSharp", cursive;
-}
-
-#effect {
-  height: 92px;
-  width: 92px;
-  transform: translate(-50%, -50%);
-  background: url(images/effect.png);
-  animation-name: effect_animation;
-  animation-duration: 1.5s;
-  animation-timing-function: steps(10);
-  animation-iteration-count: infinite;
 }
 
 p {
@@ -97,34 +91,42 @@ p {
   from {
     background-position: 0px;
   }
+
   to {
     background-position: -1152px;
   }
 }
+
 @keyframes effect_animation {
   from {
     background-position: 0px;
   }
+
   to {
     background-position: -920px;
   }
 }
+
 @keyframes bg_animation {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -1920px;
   }
 }
+
 @keyframes wizard_animation {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -1536px;
   }
 }
+
 .container {
   margin: 0;
   padding: 0;
@@ -146,10 +148,12 @@ p {
   0% {
     background-position: 0 100px, 0 200px, 100px 150px;
   }
+
   100% {
     background-position: 1000px 100px, 1200px 200px, 1100px 150px;
   }
 }
+
 .experience {
   position: relative;
   z-index: 0;
@@ -175,19 +179,58 @@ p {
   0% {
     transform: translate(1800px);
   }
+
   100% {
     transform: translate(-1000px);
   }
 }
+
 @keyframes bird-2 {
   0% {
     transform: translate(-1800px) scaleX(-1);
   }
+
   100% {
     transform: translate(1800px) scaleX(-1);
   }
 }
+
 .test {
   background: rgb(50, 34, 24);
   background: linear-gradient(180deg, rgb(50, 34, 24) 44%, rgb(0, 0, 0) 100%);
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.village {
+  position: relative;
+}
+
+.villager_man {
+  height: 100%;
+  width: 100%;
+  background: url(images/Idle.png);
+  animation: man_idle 1.5s steps(5) infinite;
+  border: 1px solid red;
+}
+
+
+@keyframes man_idle {
+  0% {
+    background-position: 0px;
+  }
+
+  to {
+    background-position: -1920px;
+  }
+}
+
+.wrapper {
+  height: 384px;
+  width: 384px;
+  border: 1px solid red;
+  position: absolute;
+  bottom: calc(50% - 34%);
+  left: calc(50% - 30%);
+  z-index: 1;
+}
