@@ -13,6 +13,8 @@
     src: url(fonts/MedievalSharp-Regular.ttf);
 }
 
+$sword-cursor : 'cursor/cur964.cur';
+
 * {
     margin: 0;
     padding: 0;
@@ -137,22 +139,28 @@ p {
 }
 
 @mixin gif {
-    width: 40%;
+    display: inline-block;
     height: 40%;
     position: absolute;
     z-index: 1;
+
+    &:hover {
+        cursor: url($sword-cursor), default;
+        // filter: brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(1600%) hue-rotate(310deg) brightness(100%) contrast(95%);
+    }
 }
 
 .gif {
     @include gif;
     bottom: calc(100% - 84%);
-    left: calc(100% - 100%);
+    left: calc(100% - 90%);
 }
+
 
 .gif2 {
     @include gif;
     bottom: calc(100% - 84%);
-    left: calc(100% - 70%);
+    left: calc(100% - 60%);
     transform: scaleX(-1);
 }
 
@@ -168,7 +176,7 @@ p {
 .gif4 {
     @include gif;
     bottom: calc(100% - 84%);
-    left: calc(100% - 37%);
+    left: calc(100% - 27%);
     transform: scaleX(-1);
 }
 
@@ -304,4 +312,58 @@ p {
     .title {
         font-size: 10rem;
     }
+}
+
+@mixin tooltip {
+    display: none;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: .2rem;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 3;
+}
+
+.toolTiptextKunoichi {
+    @include tooltip();
+    bottom: calc(100% - 61%);
+    left: calc(100% - 51%);
+}
+
+.toolTiptextKnight {
+    @include tooltip();
+    bottom: calc(100% - 61%);
+    left: calc(100% - 13%);
+}
+
+.toolTiptextWizard {
+    @include tooltip();
+    bottom: calc(100% - 61%);
+    left: calc(100% - 84%);
+}
+
+.toolTiptextDog {
+    @include tooltip();
+    bottom: calc(100% - 34%);
+    left: calc(100% - 85%);
+}
+
+.gif2:hover~.toolTiptextKunoichi {
+    display: block;
+}
+
+.gif4:hover~.toolTiptextKnight {
+    display: block;
+}
+
+.gif:hover~.toolTiptextWizard {
+    display: block;
+}
+
+.gif3:hover~.toolTiptextDog {
+    display: block;
 }

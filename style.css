@@ -126,22 +126,28 @@ p {
 }
 
 .gif {
-  width: 40%;
+  display: inline-block;
   height: 40%;
   position: absolute;
   z-index: 1;
   bottom: 16%;
-  left: 0%;
+  left: 10%;
+}
+.gif:hover {
+  cursor: url("cursor/cur964.cur"), default;
 }
 
 .gif2 {
-  width: 40%;
+  display: inline-block;
   height: 40%;
   position: absolute;
   z-index: 1;
   bottom: 16%;
-  left: 30%;
+  left: 40%;
   transform: scaleX(-1);
+}
+.gif2:hover {
+  cursor: url("cursor/cur964.cur"), default;
 }
 
 .gif3 {
@@ -154,13 +160,16 @@ p {
 }
 
 .gif4 {
-  width: 40%;
+  display: inline-block;
   height: 40%;
   position: absolute;
   z-index: 1;
   bottom: 16%;
-  left: 63%;
+  left: 73%;
   transform: scaleX(-1);
+}
+.gif4:hover {
+  cursor: url("cursor/cur964.cur"), default;
 }
 
 .cave {
@@ -276,4 +285,79 @@ p {
   .title {
     font-size: 10rem;
   }
+}
+.toolTiptextKunoichi {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 3;
+  bottom: 39%;
+  left: 49%;
+}
+
+.toolTiptextKnight {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 3;
+  bottom: 39%;
+  left: 87%;
+}
+
+.toolTiptextWizard {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 3;
+  bottom: 39%;
+  left: 16%;
+}
+
+.toolTiptextDog {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 3;
+  bottom: 66%;
+  left: 15%;
+}
+
+.gif2:hover ~ .toolTiptextKunoichi {
+  display: block;
+}
+
+.gif4:hover ~ .toolTiptextKnight {
+  display: block;
+}
+
+.gif:hover ~ .toolTiptextWizard {
+  display: block;
+}
+
+.gif3:hover ~ .toolTiptextDog {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
