@@ -45,6 +45,19 @@ class Entities {
     }
 }
 
+class User {
+    constructor(firstName, lastName, email) {
+        this.user = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+        }
+    }
+
+    saveUserToLocalStorage() {
+        storageHelper.saveToLocalStorage('user', JSON.stringify(this.user));
+    }
+}
 
 
 const entities = new Entities();
@@ -56,6 +69,24 @@ const hero = $("#hero");
 const kunoichiToolTip = $('.toolTiptextKunoichi')[0];
 const wizardToolTip = $('.toolTiptextWizard')[0];
 const knightToolTip = $('.toolTiptextKnight')[0];
+const userFirstName = $('#firstName')[0];
+const userLastName = $('#lastName')[0];
+const userEmail = $('#email')[0];
+const userFirstName2 = $('#firstName2')[0];
+const userLastName2 = $('#lastName2')[0];
+const userEmail2 = $('#email2')[0];
+const form = $('#form');
+const form2 = $('#form2');
+const user = JSON.parse(storageHelper.getFromLocalStorage('user'));
+const heroFirstName = $('#heroFirstName')[0];
+const heroLastName = $('#heroLastName')[0];
+const userIsBack = $('#userIsBack')[0];
+
+if (user != null) {
+    userIsBack.style.display = 'block'
+    heroFirstName.innerText = user.firstName;
+    heroLastName.innerText = user.lastName;
+}
 
 if (entitiesThatAreAlive != null) {
     if (entitiesThatAreAlive.fireWizardIsDead) {
@@ -73,7 +104,6 @@ $(document).ready(() => {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
             const response = JSON.parse(xhttp.responseText);
             kunoichiToolTip.innerText = response[0].quote;
         }
@@ -86,7 +116,6 @@ $(document).ready(() => {
     const xhttp2 = new XMLHttpRequest();
     xhttp2.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-
             const response = JSON.parse(xhttp2.responseText);
             wizardToolTip.innerText = response[0].quote;
         }
@@ -99,7 +128,6 @@ $(document).ready(() => {
     const xhttp3 = new XMLHttpRequest();
     xhttp3.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-
             const response = JSON.parse(xhttp3.responseText);
             knightToolTip.innerText = response[0].quote;
         }
@@ -143,4 +171,52 @@ kunoichi.on("click", () => {
     setTimeout(() => {
         kunoichi.remove();
     }, 1200)
+})
+
+form.on("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
+    if (userFirstName.value === '') {
+        $('#firstNameError')[0].innerText = 'Please enter your first name'
+        isValid = false;
+    }
+    if (userLastName.value === '') {
+        $('#lastNameError')[0].innerText = 'Please enter your last name'
+        isValid = false;
+    }
+
+    if (userEmail.value === '') {
+        $('#emailError')[0].innerText = 'Please enter your email'
+        isValid = false;
+    }
+    if (!isValid) {
+        return;
+    }
+    $('#successMessage')[0].style.display = 'block';
+    const user = new User(userFirstName.value, userLastName.value, userEmail.value);
+    user.saveUserToLocalStorage();
+})
+
+form2.on("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
+    if (userFirstName2.value === '') {
+        $('#firstNameError2')[0].innerText = 'Please enter your first name'
+        isValid = false;
+    }
+    if (userLastName2.value === '') {
+        $('#lastNameError2')[0].innerText = 'Please enter your last name'
+        isValid = false;
+    }
+
+    if (userEmail2.value === '') {
+        $('#emailError2')[0].innerText = 'Please enter your email'
+        isValid = false;
+    }
+    if (!isValid) {
+        return;
+    }
+    $('#successMessage2')[0].style.display = 'block';
+    const user = new User(userFirstName2.value, userLastName2.value, userEmail2.value);
+    user.saveUserToLocalStorage();
 })

@@ -44,35 +44,29 @@ h1 {
     font-family: sans-serif;
 }
 
-
-.animation {
+@mixin warriorAndWizardDimensions {
     height: 192px;
     width: 192px;
+}
+
+
+.animation {
+    @include warriorAndWizardDimensions();
     background: url(images/warrior_idle.png);
-    animation-name: sprite;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(6);
-    animation-iteration-count: infinite;
+    animation: sprite 1.5s steps(6) infinite;
 
 }
 
 .wizard {
-    height: 192px;
-    width: 192px;
+    @include warriorAndWizardDimensions();
     background: url(images/wizard.png);
-    animation-name: wizard_animation;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(8);
-    animation-iteration-count: infinite;
-
+    animation: wizard_animation 1.5s steps(8) infinite;
 }
 
 .wizard:hover {
-    height: 192px;
-    width: 192px;
+    @include warriorAndWizardDimensions();
     background: url(images/Hurt.png);
     animation: wizard_hurt 1.5s steps(4) infinite;
-
 }
 
 @keyframes wizard_hurt {
@@ -114,6 +108,7 @@ p {
 }
 
 .bird-1 {
+    display: none;
     position: absolute;
     top: 3rem;
     left: 3rem;
@@ -122,6 +117,7 @@ p {
 }
 
 .bird-2 {
+    display: none;
     position: absolute;
     bottom: 3rem;
     left: 30rem;
@@ -146,7 +142,6 @@ p {
 
     &:hover {
         cursor: url($sword-cursor), default;
-        // filter: brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(1600%) hue-rotate(310deg) brightness(100%) contrast(95%);
     }
 }
 
@@ -285,33 +280,72 @@ p {
 }
 
 @media screen and (min-width: 640px) {
+
     .title {
         font-size: 3.75rem;
         line-height: 1;
+    }
+
+    .userIsBackTitle {
+        margin-bottom: 2rem;
+        font-size: 2rem;
     }
 
     .logo {
         width: 3rem;
         height: 3rem;
     }
+
 }
 
 @media screen and (min-width: 1024px) {
     .title {
         font-size: 4rem;
     }
+
+    .userIsBackTitle {
+        margin-bottom: 6rem;
+    }
+
+    #form {
+        display: block;
+        width: 25rem;
+        position: absolute;
+        left: 45%;
+        top: 30%;
+        transform: translate(-30%, -48%);
+        z-index: 3;
+    }
+
+    #form2 {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 1280px) {
     .title {
         font-size: 6rem;
     }
+
+    .bird-1 {
+        display: block;
+    }
+
+    .bird-2 {
+        display: block;
+    }
+
+
+
 }
 
 @media screen and (min-width: 1536px) {
     .title {
         font-size: 10rem;
     }
+
+
 }
 
 @mixin tooltip {
@@ -322,8 +356,6 @@ p {
     text-align: center;
     border-radius: 6px;
     padding: .2rem;
-
-    /* Position the tooltip */
     position: absolute;
     z-index: 3;
 }
@@ -366,4 +398,18 @@ p {
 
 .gif3:hover~.toolTiptextDog {
     display: block;
+}
+
+.userIsBackTitle {
+    margin-bottom: 2rem;
+}
+
+.form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 1rem;
 }

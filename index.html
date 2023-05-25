@@ -15,8 +15,17 @@
 <body>
 
     <div class=" h-screen flex flex-col justify-center items-center hero" id="hero">
+
+        <h1 class="inline-block text-center userIsBackTitle  lg:text-[2rem] xl:text-[3rem]  text-white hidden"
+            id="userIsBack">
+            Bine ai revenit <br>
+            <span class="   lg:text-[2rem] xl:text-[3rem] " id="heroFirstName"></span>
+            <span class="whitespace-nowrap    lg:text-[2rem] xl:text-[3rem] " id="heroLastName">
+            </span>
+        </h1>
+
         <h1 class="inline-block text-center title  text-white">
-            Rusu Andei <br>
+            Rusu Andrei <br>
             <span class="font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem] "> Frontend</span>
             <span class="whitespace-nowrap font-[Barbarian] sm:text-6xl  lg:text-[4rem] xl:text-[6rem]">
                 Developer</span>
@@ -114,14 +123,73 @@
     </div>
     <div class="w-full cave">
         <img src="images/howxn0qns9861.webp" alt="" class="w-full object-cover">
+
         <div class="skeleton">
             <img src="images/skeleton.gif" alt="skeleton" class="w-full object-contain">
         </div>
         <div class="flying_monster flex flex-col">
             <img src="images/flying_monster.gif" alt="flying monster" class="w-full object-contain">
         </div>
+        <form class="form  hidden" id="form">
 
+            <div class="flex flex-col gap-1 mb-1">
+                <label for="firstName">
+                    First Name
+                </label>
+                <input type="text" name="firstName" id="firstName">
+                <span id="firstNameError" class="text-red-600 text-[.8rem]"></span>
+            </div>
+
+            <div class="flex flex-col gap-1 mb-1">
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input type="text" name="lastName" id="lastName">
+                <span id="lastNameError" class="text-red-600 text-[.8rem]"></span>
+            </div>
+
+            <div class="flex flex-col gap-1 mb-1">
+                <label for="email">
+                    Email
+                </label>
+                <input type="text" name="email" id="email">
+                <span id="emailError" class="text-red-600 text-[.8rem]"></span>
+            </div>
+            <button type="submit" class="w-full" id="submitButton"> Contact Me</button>
+            <span id="successMessage" class="text-green-600 text-[1.1rem] text-center hidden">Success</span>
+        </form>
     </div>
+    <form class="form2 bg-[#E6CDA5] p-5 flex flex-col gap-4" id="form2">
+
+        <div class="flex flex-col gap-1">
+            <label for="firstName2">
+                First Name
+            </label>
+            <input type="text" name="firstName" class="bg-transparent rounded-[.3rem] pl-3 border-2 border-black"
+                id="firstName2">
+            <span id="firstNameError2" class="text-red-600 text-[.8rem]"></span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+            <label for="lastName2">
+                Last Name
+            </label>
+            <input type="text" name="lastName" id="lastName2"
+                class="bg-transparent rounded-[.3rem] pl-3 border-2 border-black">
+            <span id="lastNameError2" class="text-red-600 text-[.8rem]"></span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+            <label for="email2">
+                Email
+            </label>
+            <input type="text" name="email" id="email2"
+                class="bg-transparent rounded-[.3rem] pl-3 border-2 border-black">
+            <span id="emailError2" class="text-red-600 text-[.8rem]"></span>
+        </div>
+        <button type="submit" class="w-full bg-black text-white rounded-[.3rem]" id="submitButton2"> Contact Me</button>
+        <span id="successMessage2" class="text-green-600 text-[1.1rem] text-center hidden">Success</span>
+    </form>
     <script src="index.js"></script>
 </body>
 

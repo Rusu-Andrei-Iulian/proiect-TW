@@ -2,14 +2,17 @@
   font-family: SquareCaps;
   src: url(fonts/SquareCaps.ttf);
 }
+
 @font-face {
   font-family: Barbarian;
   src: url(fonts/Barbarian.ttf);
 }
+
 @font-face {
   font-family: MedievalSharp;
   src: url(fonts/MedievalSharp-Regular.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -43,20 +46,14 @@ h1 {
   height: 192px;
   width: 192px;
   background: url(images/warrior_idle.png);
-  animation-name: sprite;
-  animation-duration: 1.5s;
-  animation-timing-function: steps(6);
-  animation-iteration-count: infinite;
+  animation: sprite 1.5s steps(6) infinite;
 }
 
 .wizard {
   height: 192px;
   width: 192px;
   background: url(images/wizard.png);
-  animation-name: wizard_animation;
-  animation-duration: 1.5s;
-  animation-timing-function: steps(8);
-  animation-iteration-count: infinite;
+  animation: wizard_animation 1.5s steps(8) infinite;
 }
 
 .wizard:hover {
@@ -70,10 +67,12 @@ h1 {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -768px;
   }
 }
+
 p {
   font-family: "MedievalSharp", cursive;
 }
@@ -101,6 +100,7 @@ p {
 }
 
 .bird-1 {
+  display: none;
   position: absolute;
   top: 3rem;
   left: 3rem;
@@ -109,6 +109,7 @@ p {
 }
 
 .bird-2 {
+  display: none;
   position: absolute;
   bottom: 3rem;
   left: 30rem;
@@ -133,6 +134,7 @@ p {
   bottom: 16%;
   left: 10%;
 }
+
 .gif:hover {
   cursor: url("cursor/cur964.cur"), default;
 }
@@ -146,6 +148,7 @@ p {
   left: 40%;
   transform: scaleX(-1);
 }
+
 .gif2:hover {
   cursor: url("cursor/cur964.cur"), default;
 }
@@ -168,6 +171,7 @@ p {
   left: 73%;
   transform: scaleX(-1);
 }
+
 .gif4:hover {
   cursor: url("cursor/cur964.cur"), default;
 }
@@ -209,83 +213,133 @@ p {
   0% {
     background-position: 0 100px, 0 200px, 100px 150px;
   }
+
   100% {
     background-position: 1000px 100px, 1200px 200px, 1100px 150px;
   }
 }
+
 @keyframes bird-1 {
   0% {
     transform: translate(1800px);
   }
+
   100% {
     transform: translate(-1000px);
   }
 }
+
 @keyframes bird-2 {
   0% {
     transform: translate(-1800px) scaleX(-1);
   }
+
   100% {
     transform: translate(1800px) scaleX(-1);
   }
 }
+
 @keyframes sprite {
   from {
     background-position: 0px;
   }
+
   to {
     background-position: -1152px;
   }
 }
+
 @keyframes effect_animation {
   from {
     background-position: 0px;
   }
+
   to {
     background-position: -920px;
   }
 }
+
 @keyframes bg_animation {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -1920px;
   }
 }
+
 @keyframes wizard_animation {
   0% {
     background-position: 0px;
   }
+
   to {
     background-position: -1536px;
   }
 }
+
 @media screen and (min-width: 640px) {
   .title {
     font-size: 3.75rem;
     line-height: 1;
   }
+
+  .userIsBackTitle {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
   .logo {
     width: 3rem;
     height: 3rem;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 4rem;
   }
+
+  .userIsBackTitle {
+    margin-bottom: 6rem;
+  }
+
+  #form {
+    display: block;
+    width: 25rem;
+    position: absolute;
+    left: 45%;
+    top: 30%;
+    transform: translate(-30%, -48%);
+    z-index: 3;
+  }
+
+  #form2 {
+    display: none;
+  }
 }
+
 @media screen and (min-width: 1280px) {
   .title {
     font-size: 6rem;
   }
+
+  .bird-1 {
+    display: block;
+  }
+
+  .bird-2 {
+    display: block;
+  }
 }
+
 @media screen and (min-width: 1536px) {
   .title {
     font-size: 10rem;
   }
 }
+
 .toolTiptextKunoichi {
   display: none;
   width: 120px;
@@ -294,7 +348,6 @@ p {
   text-align: center;
   border-radius: 6px;
   padding: 0.2rem;
-  /* Position the tooltip */
   position: absolute;
   z-index: 3;
   bottom: 39%;
@@ -309,7 +362,6 @@ p {
   text-align: center;
   border-radius: 6px;
   padding: 0.2rem;
-  /* Position the tooltip */
   position: absolute;
   z-index: 3;
   bottom: 39%;
@@ -324,7 +376,6 @@ p {
   text-align: center;
   border-radius: 6px;
   padding: 0.2rem;
-  /* Position the tooltip */
   position: absolute;
   z-index: 3;
   bottom: 39%;
@@ -339,25 +390,40 @@ p {
   text-align: center;
   border-radius: 6px;
   padding: 0.2rem;
-  /* Position the tooltip */
   position: absolute;
   z-index: 3;
   bottom: 66%;
   left: 15%;
 }
 
-.gif2:hover ~ .toolTiptextKunoichi {
+.gif2:hover~.toolTiptextKunoichi {
   display: block;
 }
 
-.gif4:hover ~ .toolTiptextKnight {
+.gif4:hover~.toolTiptextKnight {
   display: block;
 }
 
-.gif:hover ~ .toolTiptextWizard {
+.gif:hover~.toolTiptextWizard {
   display: block;
 }
 
-.gif3:hover ~ .toolTiptextDog {
+.gif3:hover~.toolTiptextDog {
   display: block;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.userIsBackTitle {
+  margin-bottom: 2rem;
+}
+
+.form {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
